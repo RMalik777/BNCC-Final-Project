@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js" integrity="sha256-6XMVI0zB8cRzfZjqKcD01PBsAy3FlDASrlC8SxCpInY=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse w-100" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-evenly">
+          <li class="nav-item">
+            <a class="nav-link text-white" aria-current="page" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#isi">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#schedule">Schedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="home" class="container-fluid">
+    <div id="carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./Asset/fest.jpg" class="img-fluid" alt="robot looking at camera">
+          <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 p-0 m-0">
+            <h1>PuddingFest</h1>
+            <p>A Place Where Imagination Meets Reality</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./Asset/vr.jpg" class="img-fluid" alt="people testing virtual reality headset">
+          <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 p-0 m-0">
+            <h1>PuddingFest</h1>
+            <p>Immersive VR Experience</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./Asset/robot.jpg" class="img-fluid" alt="multiple screen">
+          <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 p-0 m-0">
+            <h1>PuddingFest</h1>
+            <p>Most Advanced Robot Technology</p>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+
+  <div id="isi">
+    <div class="container-fluid h-100 d-flex flex-column align-items-center justify-content-center">
+      <h3 class="text-white text-center">PT Musang Present</h3>
+      <h1 class="text-white text-center">PuddingFest 2022</h1>
+      <hr class="solid">
+      <p class="text-white">PuddingFest is an annual technology event presented by PT Musang. Showcasing the best innovation from various brands across the world. This is where your dream becomes reality. Are you a developer? A tech enthusiast? An investor? What are you waiting for? Showcase your dream now!</p>
+      <a href="#">
+        <button type="button" class="btn btn-outline-light registbtn">REGISTER</button>
+      </a>
+    </div>
+  </div>
+
+  <div id="isi2">
+    <div class="container-fluid h-100 d-flex flex-column align-items-center justify-content-start">
+      <h1 class="text-white text-center">FEATURED TOPIC</h1>
+      <hr class="solid mb-5 pb-5">
+      <div class="row w-100 pt-md-5 pb-5 justify-content-between">
+        <div class="col-md order-md-1">
+          <img src="./Asset/Doctor.jpg" alt="Doctor typing in a laptop" class="img-fluid">
+        </div>
+        <div class="col-md order-md-0">
+          <h2 class="text-white">Digital Healthcare</h2>
+          <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aut repellat placeat atque perferendis molestiae, ullam beatae reprehenderit id recusandae corporis, soluta magnam accusamus! In assumenda quae sapiente non adipisci. <br><br>Learn More &rarr;</p>
+        </div>
+      </div>
+      <div class="row w-100 pb-5 pt-md-5 justify-content-between">
+        <div class="col-md order-0">
+          <img src="./Asset/Autonomous.jpg" alt="Autonomous vehicle in street" class="img-fluid">
+        </div>
+        <div class="col-md order-1">
+          <h2 class="text-white">Autonomous Vehicle</h2>
+          <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aut repellat placeat atque perferendis molestiae, ullam beatae reprehenderit id recusandae corporis, soluta magnam accusamus! In assumenda quae sapiente non adipisci.<br><br>Learn More &rarr;</p>
+        </div>
+      </div>
+      <div class="row w-100 pb-5 pt-md-5 justify-content-between">
+        <div class="col-md order-md-1">
+          <img src="./Asset/Movie.jpg" alt="Cinema camera in the light" class="img-fluid">
+        </div>
+        <div class="col-md order-md-0">
+          <h2 class="text-white">Advanced Movie Production</h2>
+          <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aut repellat placeat atque perferendis molestiae, ullam beatae reprehenderit id recusandae corporis, soluta magnam accusamus! In assumenda quae sapiente non adipisci.<br><br>Learn More &rarr;</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="schedule">
+    <div class="container-fluid h-100 d-flex flex-column justify-content-center align-items-center">
+      <h1 class="text-white text-center">SCHEDULE</h1>
+      <hr class="solid mb-5 pb-5">
+
+      <div class="row">
+        <h2 class="text-black bg-white">Monday</h2>
+        <div class="col-md">
+          <h3 class="text-white">Opening Ceremony</h3>
+          <p class="text-white">Speaker: Mrs. Meiying</p>
+        </div>
+        <div class="col-md">
+          <div id="carouselschedule" class="carousel slide" data-bs-ride="carousel" data-bs-interval="60000">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner h-100">
+              <div class="carousel-item active h-100">
+                <img src="./Asset/opening.jpg" class="img-fluid" alt="...">
+              </div>
+              <div class="carousel-item h-100">
+                <img src="./Asset/keynote.jpg" class="img-fluid" alt="...">
+              </div>
+              <div class="carousel-item h-100">
+                <img src="./Asset/show1.jpg" class="img-fluid" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselschedule" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselschedule" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+                </div>
+        </div>
+
+    </div>
+  </div>
+
+
+</body>
+<script src="./index.js"></script>
+</html>

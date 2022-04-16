@@ -1,0 +1,165 @@
+@font-face {
+    font-family: 'Riviera Nights';
+    src: 
+    url(./Asset/Font/RivieraNights-Regular-WebTrial.woff) format('woff'),
+    url(./Asset/Font/RivieraNights-Regular-WebTrial.woff2) format('woff2'),
+    url(./Asset/Font/RivieraNights-Regular-WebTrial.ttf) format('trutype');
+}
+
+*{
+    margin: 0px;
+    scroll-behavior: smooth;
+    font-family: 'Riviera Nights', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 10px;
+}
+
+nav{
+    position: fixed;
+}
+
+nav ul li a{
+    color: white;
+    font-size: clamp(1.2rem, 2vw, 2rem);
+}
+
+.glass{
+    background: rgba( 255, 255, 255, 0.0);
+    backdrop-filter: blur( 8px );
+    -webkit-backdrop-filter: blur( 8px );
+}
+
+#home{
+    padding:0px;
+    height: 100vh;
+}
+#home #carousel{
+    height: 100%;
+}
+#home #carousel .carousel-inner{
+    height: 100%;
+}
+#home #carousel .carousel-inner .carousel-item{
+    height: 100%;
+    clip-path: inset(0);
+}
+#home #carousel .carousel-inner .carousel-item img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: fixed;
+    z-index: -1;
+    -webkit-filter: brightness(75%);
+    filter: brightness(75%);
+}
+
+#carousel .carousel-item:before {
+    content: "";
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6));
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#home #carousel .carousel-inner .carousel-item h1{
+    font-size: clamp(2rem, 10vw, 10rem);
+    letter-spacing: 1vw;
+
+}
+#home #carousel .carousel-inner .carousel-item p{
+    font-size: clamp(1rem, 3.82vw, 3.8rem);
+    letter-spacing: 0.4vw;
+}
+#isi{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url(./Asset/stage.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#isi h1{
+    font-size: clamp(2rem, 5vw, 7.2rem);
+    letter-spacing: 0.1vw;
+}
+#isi h3{
+    font-size: clamp(1rem, 2vw, 2.8rem);
+    letter-spacing: 0.1vw;
+}
+#isi p{
+    width: 70vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: clamp(1rem, 1.5vw, 2rem);
+    text-align: justify;
+    letter-spacing: 0.1vw;
+}
+#isi .registbtn{
+    height: clamp(35px, 6vh, 55px);
+    width: clamp(75px,15vw, 250px);
+    font-size: clamp(1rem, 1vw, 2.4rem);
+    border-radius: 25px;
+    letter-spacing: 0.25vw;
+}
+
+
+hr.solid {
+    border-top: 3px solid #bbb;
+    width: 15vw;
+    margin-bottom: 30px;
+}
+
+#isi2{
+    padding-top: clamp(25px,10vh, 400px);
+    height: auto;
+    background-color: black;
+}
+
+#isi2 h1{
+    font-size: clamp(2rem, 5vw, 7.2rem);
+    letter-spacing: 0.3vw;
+}
+#isi2 .row .col-md img{
+    object-fit: cover;
+    object-position: center;
+}
+#isi2 .row .col-md h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: clamp(2rem, 4vw, 5rem);
+    letter-spacing: 0.25vw;
+}
+#isi2 .row .col-md p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: clamp(1.2rem, 1.4vw, 2rem);
+    text-align: justify;
+    letter-spacing: 0.1vw;
+}
+
+
+#schedule{
+    padding-top: 100px;
+    height: 100vh;
+    background-color: black;
+}
+#schedule .container-fluid h1{
+    font-size: clamp(2rem, 5vw, 7.2rem);
+    letter-spacing: 0.3vw;
+}
+
+#schedule .container-fluid .row h2{
+    font-size: clamp(1.8rem, 3vw, 3.2rem);
+    letter-spacing: 0.2vw;
+    padding: 1vw;
+}
+
+#schedule #carouselschedule{
+    object-fit: cover;
+    object-position: center;
+}
+#schedule #carouselschedule .carousel-inner .carousel-item img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
