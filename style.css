@@ -139,7 +139,7 @@ hr.solid {
 
 #schedule{
     padding-top: 100px;
-    height: 100vh;
+    height: auto;
     background-color: black;
 }
 #schedule .container-fluid h1{
@@ -148,18 +148,23 @@ hr.solid {
 }
 
 #schedule .container-fluid .row h2{
-    font-size: clamp(1.8rem, 3vw, 3.2rem);
+    font-size: clamp(2rem, 3.2vw, 3.6rem);
     letter-spacing: 0.2vw;
     padding: 1vw;
 }
 
-#schedule #carouselschedule{
-    object-fit: cover;
-    object-position: center;
+#schedule .container-fluid .row .col-md h3{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: clamp(1.6rem, 2.2vw, 3.2rem);
+    letter-spacing: 0.25vw;
 }
+#schedule .container-fluid .row .col-md p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: clamp(1.4rem, 1.6vw, 2.4rem);
+    letter-spacing: 0.1vw;
+}
+
 #schedule #carouselschedule .carousel-inner .carousel-item img{
-    height: 100%;
-    width: 100%;
     object-fit: cover;
     object-position: center;
 }
