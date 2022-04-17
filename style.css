@@ -22,10 +22,29 @@ nav ul li a{
     font-size: clamp(1.2rem, 2vw, 2rem);
 }
 
+hr.solid {
+    border-top: 4px solid #bbbbbb;
+    width: 15vw;
+    margin-bottom: 30px;
+    opacity: 1;
+}
+
+hr.hrlong{
+    margin-bottom: 50px;
+}
+hr.hrfoot{
+    border-top: 1px solid #bbbbbb;
+    width: 95vw;
+    margin-bottom: 10px;
+    opacity: 1;
+}
+
 .glass{
     background: rgba( 255, 255, 255, 0.0);
-    backdrop-filter: blur( 8px );
-    -webkit-backdrop-filter: blur( 8px );
+    backdrop-filter: blur( 11px );
+    -webkit-backdrop-filter: blur( 11px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 15px;
 }
 
 #home{
@@ -104,12 +123,6 @@ nav ul li a{
 }
 
 
-hr.solid {
-    border-top: 3px solid #bbb;
-    width: 15vw;
-    margin-bottom: 30px;
-}
-
 #isi2{
     padding-top: clamp(25px,10vh, 400px);
     height: auto;
@@ -141,6 +154,7 @@ hr.solid {
     padding-top: 100px;
     height: auto;
     background-color: black;
+    padding-bottom: 100px;
 }
 #schedule .container-fluid h1{
     font-size: clamp(2rem, 5vw, 7.2rem);
@@ -167,4 +181,75 @@ hr.solid {
 #schedule #carouselschedule .carousel-inner .carousel-item img{
     object-fit: cover;
     object-position: center;
+}
+
+#regist{
+    height: auto;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url(./Asset/playing\ laptop.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#regist .container-fluid h1{
+    font-size: clamp(2rem, 5vw, 7.2rem);
+    letter-spacing: 0.3vw;
+}
+
+#regist .container-fluid h4{
+    font-size: clamp(2.4rem, 2.5vw, 3.6rem);
+    letter-spacing: 0.15vw;
+}
+
+#regist .container-fluid p{
+    font-size: clamp(1.4rem, 1.2vw, 2rem);
+    letter-spacing: 0.025vw;
+}
+
+#regist .container-fluid label, #regist .container-fluid option{
+    font-size: clamp(1.4rem, 1.6vw, 2.4rem);
+    letter-spacing: 0.05vw;
+}
+
+#regist .container-fluid input, #regist .container-fluid select{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: clamp(1.4rem, 1.6vw, 2.4rem);
+    padding: 0.2vw;
+}
+
+#regist .container-fluid #help{
+    font-size: clamp(1rem, 1.2vw, 1.8rem);
+}
+
+#regist .container-fluid button{
+    height: clamp(35px, 6vh, 55px);
+    width: clamp(70px,15vw, 200px);
+    font-size: clamp(1.4rem, 1.6vw, 2.4rem);
+    letter-spacing: 0.1vw;
+    border-radius: 20px;
+}
+
+#contact{
+    height: auto;
+    background-color: black;
+}
+#contact h1{
+    font-size: clamp(2.4rem, 2.5vw, 3.6rem);
+    letter-spacing: 0.1vw;
+    width: auto;
+}
+#contact h2{
+    font-size: clamp(1.2rem, 1.5vw, 2rem);
+    letter-spacing: 0.1vw;
+    width: auto;
+}
+
+#contact .container-fluid img{
+    height: 2.2vw;
+}
+#contact .container-fluid a{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: clamp(1.2rem, 1.5vw, 2rem);
+    letter-spacing: 0.05vw;
 }
