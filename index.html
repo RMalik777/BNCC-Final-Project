@@ -9,6 +9,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js" integrity="sha256-6XMVI0zB8cRzfZjqKcD01PBsAy3FlDASrlC8SxCpInY=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js" integrity="sha512-XZEy8UQ9rngkxQVugAdOuBRDmJ5N4vCuNXCh8KlniZgDKTvf7zl75QBtaVG1lEhMFe2a2DuA22nZYY+qsI2/xA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" integrity="sha512-YUkaLm+KJ5lQXDBdqBqk7EVhJAdxRnVdT2vtCzwPHSweCzyMgYV/tgGF4/dCyqtCC2eCphz0lRQgatGVdfR0ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="style.css">
   <title>PuddingFest</title>
 </head>
@@ -331,27 +335,25 @@
         <div class="card-body p-5">
           <h4 class="card-title text-white">PuddingFest Registration</h4>
           <p class="card-text text-white mb-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <form>
+          <form id="regform">
             <div class="mb-3">
               <label for="inputmail" class="form-label text-white">Email address</label>
-              <input type="email" class="form-control" id="inputmail" placeholder="example@mail.com" aria-describedby="help">
-              <div id="help" class="form-text text-white">We'll never share your email with anyone else.</div>
+              <input type="email" class="form-control" id="inputmail" placeholder="example@mail.com" aria-describedby="help" name="mail">
+              <!-- <div id="help" class="form-text text-white">We'll never share your email with anyone else.</div> -->
             </div>
             <div class="mb-3">
               <label for="inputname" class="form-label text-white">Name</label>
-              <input type="text" class="form-control" id="inputname" placeholder="John Doe">
-              <div id="help" class="form-text text-white">Minimum of 3 characters
-              </div>
+              <input type="text" class="form-control" id="inputname" placeholder="John Doe" name="names">
+              <!-- <div id="help" class="form-text text-white">Minimum of 3 characters</div> -->
             </div>
             <div class="mb-3">
               <label for="inputphonum" class="form-label text-white">Phone Number</label>
-              <input type="number" id="inputphonum" class="form-control" aria-describedby="help" placeholder="08xxxxxxxxx">
-              <div id="help" class="form-text text-white">Your phone number must start with 08 and not more than 14 digit
-              </div>
+              <input type="number" id="inputphonum" class="form-control" aria-describedby="help" placeholder="08xxxxxxxxx" name="phonum">
+              <!-- <div id="help" class="form-text text-white">Your phone number must start with 08 and not more than 14 digit</div> -->
             </div>
             <div class="mb-3">
               <label for="dropdown" class="form-label text-white">Event</label>
-              <select class="form-select text-black-50" aria-label="Default select example" id="dropdown" >
+              <select class="form-select text-black" aria-label="Default select example" id="dropdown" name="list" >
                 <option selected class="text-black-50">Select event you want to join</option>
                 <option value="1" class="text-black">Brand Presentation</option>
                 <option value="2" class="text-black">Showcase Event</option>
@@ -393,8 +395,6 @@
       </div>
     </div>
   </footer>
-    
-
 </body>
 <script src="./index.js"></script>
 </html>
