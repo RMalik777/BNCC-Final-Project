@@ -13,6 +13,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js" integrity="sha512-XZEy8UQ9rngkxQVugAdOuBRDmJ5N4vCuNXCh8KlniZgDKTvf7zl75QBtaVG1lEhMFe2a2DuA22nZYY+qsI2/xA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" integrity="sha512-YUkaLm+KJ5lQXDBdqBqk7EVhJAdxRnVdT2vtCzwPHSweCzyMgYV/tgGF4/dCyqtCC2eCphz0lRQgatGVdfR0ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
   <link rel="stylesheet" href="style.css">
   <title>PuddingFest</title>
 </head>
@@ -354,14 +356,14 @@
             <div class="mb-3">
               <label for="dropdown" class="form-label text-white">Event</label>
               <select class="form-select text-black" aria-label="Default select example" id="dropdown" name="list" >
-                <option selected class="text-black-50">Select event you want to join</option>
+                <option selected class="text-black-50" value="">Select event you want to join</option>
                 <option value="1" class="text-black">Brand Presentation</option>
                 <option value="2" class="text-black">Showcase Event</option>
                 <option value="3" class="text-black">Event Sponsor</option>
               </select>
             </div>
             
-            <button type="submit" class="btn btn-primary mt-5">Submit</button>
+            <button type="submit" class="btn btn-primary mt-5" id="submitbtn">Submit</button>
           </form>
           
         </div>
@@ -396,5 +398,5 @@
     </div>
   </footer>
 </body>
-<script src="./index.js"></script>
+<script type="module" src="./index.js"></script>
 </html>
