@@ -39,37 +39,42 @@ $(document).ready(function () {
             },
             list: {
                 required: true,
-                selectName: {min:1},
             }
-            
         }
     })
 
-    $("#submitbtn").click((e)=> {
-        // e.preventDefault();
-        var inputmail = $("#inputmail").val();
-        var inputnama = $("#inputname").val();
-        var inputnum = $("#inputphonum").val();
-        var event = $("#dropdown").find(':selected').text();
-        
-        db.collection("peserta").add({
-            Nama: inputmail,
-            Email: inputnama,
-            Telp: inputnum,
-            event: event,
-        })
-        .then((docRef) => {
-            console.log("Document written with ID: ", docRef.id);
-            $("#inputmail").val('');
-            $("#inputname").val('');
-            $("#inputphonum").val('');
-            $("#dropdown").prop('selectedIndex',0);
-        })
-        .catch((error) => {
-            console.error("Error adding document: ", error);
-        });
+    $("#regform").submit((e)=> {
+        var valid = $("#regform").valid();
+        if(valid){
+            e.preventDefault();
+            var inputmail = $("#inputmail").val();
+            var inputnama = $("#inputname").val();
+            var inputnum = $("#inputphonum").val();
+            var event = $("#dropdown").find(':selected').text();
+            
+            db.collection("peserta").add({
+                Nama: inputmail,
+                Email: inputnama,
+                Telp: inputnum,
+                event: event,
+            })
+            .then((docRef) => {
+                console.log("Document written with ID: ", docRef.id);
+                alert("Registration Success");
+                $("#inputmail").val('');
+                $("#inputname").val('');
+                $("#inputphonum").val('');
+                $("#dropdown").prop('selectedIndex',0);
+            })
+            .catch((error) => {
+                console.error("Error adding document: ", error);
+            });
+        }
+        else{
+            e.preventDefault();
+            alert("Please fill every box correctly!");
+        }
     });
-
 
     $(window).scroll(()=>{
         if($(window).scrollTop()){
