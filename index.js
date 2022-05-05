@@ -1,6 +1,5 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-analytics.js";
 // TODO: Add SDKs for Firebase products that you want to use
 
 // Initialize Firebase
@@ -18,7 +17,7 @@ firebase.initializeApp(firebaseConfig);
 // Initialize Firebase
 const db = firebase.firestore();
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
 
 $(document).ready(function () {
     $("#regform").validate({
@@ -50,13 +49,13 @@ $(document).ready(function () {
             var inputmail = $("#inputmail").val();
             var inputnama = $("#inputname").val();
             var inputnum = $("#inputphonum").val();
-            var event = $("#dropdown").find(':selected').text();
+            var events = $("#dropdown").find(':selected').text();
             
-            db.collection("peserta").add({
+            (db.collection("peserta").add({
                 Nama: inputmail,
                 Email: inputnama,
                 Telp: inputnum,
-                event: event,
+                event: events,
             })
             .then((docRef) => {
                 console.log("Document written with ID: ", docRef.id);
@@ -68,7 +67,7 @@ $(document).ready(function () {
             })
             .catch((error) => {
                 console.error("Error adding document: ", error);
-            });
+            }));
         }
         else{
             e.preventDefault();
