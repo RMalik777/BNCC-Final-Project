@@ -6,7 +6,7 @@
     url(./Asset/Font/RivieraNights-Regular-WebTrial.ttf) format('trutype');
 }
 
-html{
+*{
     margin: 0px;
     scroll-behavior: smooth;
     font-family: 'Riviera Nights', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
