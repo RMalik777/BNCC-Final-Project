@@ -1,8 +1,5 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
-// TODO: Add SDKs for Firebase products that you want to use
 
-// Initialize Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyDGfMDUsWO3JFV9cGu0mfXC0W0YIeoMczw",
     authDomain: "bncc-final-project.firebaseapp.com",
@@ -14,10 +11,8 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-// Initialize Firebase
 const db = firebase.firestore();
 const app = initializeApp(firebaseConfig);
-
 
 $(document).ready(function () {
     $("#regform").validate({
@@ -29,7 +24,6 @@ $(document).ready(function () {
             names: {
                 required: true,
                 minlength: 3,
-                // lettersonly: true,
             },
             phonum: {
                 required: true,
@@ -75,21 +69,36 @@ $(document).ready(function () {
         }
     });
 
+    function pos() {
+        return Math.floor(($(window).width()/100)+($(window).scrollTop()/10));
+    }
+    function opac() {
+        return (2+($(window).scrollTop()/125)*-1);
+    }
+    function scl() {
+        return (1+$(window).scrollTop()/500)
+    }
+    
     $(window).scroll(()=>{
-        if($(window).scrollTop()){
+        if($(window).scrollTop()){//scroll ke bawah
             $("nav").removeClass("bg-transparent");
-            $("nav").addClass("bg-light", 500);
+            $("nav").addClass("bg-light", 400);
+            $(".navbar-toggler-icon").removeClass("whiteicon");
             $(".nav-link").addClass("text-black");
             $(".nav-link").removeClass("text-white");
+
+            $(".judul").css("letter-spacing", pos());
+            $(".judul").css("opacity", opac());
+            $(".judul2").css("opacity", opac());
+            $(".carousel-caption").css({scale:scl()});
         }
-        else{
-            $("nav").addClass("bg-transparent", 500);
+        else{//sampai di atas lagi
+            $("nav").addClass("bg-transparent", 200);
             $("nav").removeClass("bg-light");
+            $(".navbar-toggler-icon").addClass("whiteicon");
             $(".nav-link").addClass("text-white");
             $(".nav-link").removeClass("text-black");
         }
     })
-
-
 });
 

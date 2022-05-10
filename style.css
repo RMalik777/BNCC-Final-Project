@@ -6,7 +6,7 @@
     url(./Asset/Font/RivieraNights-Regular-WebTrial.ttf) format('trutype');
 }
 
-*{
+html{
     margin: 0px;
     scroll-behavior: smooth;
     font-family: 'Riviera Nights', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -41,6 +41,10 @@ hr.hrfoot{
     width: 95vw;
     margin-bottom: 10px;
     opacity: 1;
+}
+
+.whiteicon{
+    filter: grayscale(1) invert(1);
 }
 
 .glass{
@@ -86,14 +90,21 @@ hr.hrfoot{
     height: 100vh;
 }
 
-#home #carousel .carousel-inner .carousel-item h1{
+#home #carousel .carousel-inner .carousel-item .judul{
     font-size: clamp(2rem, 10vw, 10rem);
     letter-spacing: 1vw;
-
 }
-#home #carousel .carousel-inner .carousel-item p{
+
+#home #carousel .carousel-inner .carousel-item .judul2{
     font-size: clamp(1rem, 3.82vw, 3.8rem);
     letter-spacing: 0.4vw;
+}
+#home #carousel .carousel-inner .carousel-item .wide{
+    letter-spacing: 2vw !important;
+
+}
+#home #carousel .carousel-inner .carousel-item .wide2{
+    letter-spacing: 0.8vw !important;
 }
 #isi{
     height: 100vh;
