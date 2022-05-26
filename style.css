@@ -157,7 +157,7 @@ hr.hrfoot{
     font-size: clamp(2rem, 4vw, 5rem);
     letter-spacing: 0.25vw;
 }
-#isi2 .row .col-md p{
+#isi2 .row .col-md p, .row .col-md a{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: clamp(1.2rem, 1.4vw, 2rem);
     text-align: justify;
