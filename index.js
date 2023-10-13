@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDGfMDUsWO3JFV9cGu0mfXC0W0YIeoMczw",
+    apiKey: API_KEY,
     authDomain: "bncc-final-project.firebaseapp.com",
     projectId: "bncc-final-project",
     storageBucket: "bncc-final-project.appspot.com",
