@@ -1,408 +1,785 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js" integrity="sha256-6XMVI0zB8cRzfZjqKcD01PBsAy3FlDASrlC8SxCpInY=" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js" integrity="sha512-XZEy8UQ9rngkxQVugAdOuBRDmJ5N4vCuNXCh8KlniZgDKTvf7zl75QBtaVG1lEhMFe2a2DuA22nZYY+qsI2/xA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" integrity="sha512-YUkaLm+KJ5lQXDBdqBqk7EVhJAdxRnVdT2vtCzwPHSweCzyMgYV/tgGF4/dCyqtCC2eCphz0lRQgatGVdfR0ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js" integrity="sha512-lOtDAY9KMT1WH9Fx6JSuZLHxjC8wmIBxsNFL6gJPaG7sLIVoSO9yCraWOwqLLX+txsOw0h2cHvcUJlJPvMlotw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js" integrity="sha512-ueXKWOB9liraz677EVGxz6H8nLk3RJjNv8Bfc0WrO9K9NyxROX3D/6bvZ9RYvAcYFxsVU+I0Jt/AMK0Nk8ya5g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous" />
+    <script
+      src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"
+      integrity="sha256-6XMVI0zB8cRzfZjqKcD01PBsAy3FlDASrlC8SxCpInY="
+      crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"
+      integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"
+      integrity="sha512-XZEy8UQ9rngkxQVugAdOuBRDmJ5N4vCuNXCh8KlniZgDKTvf7zl75QBtaVG1lEhMFe2a2DuA22nZYY+qsI2/xA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"
+      integrity="sha512-YUkaLm+KJ5lQXDBdqBqk7EVhJAdxRnVdT2vtCzwPHSweCzyMgYV/tgGF4/dCyqtCC2eCphz0lRQgatGVdfR0ww=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"
+      integrity="sha512-lOtDAY9KMT1WH9Fx6JSuZLHxjC8wmIBxsNFL6gJPaG7sLIVoSO9yCraWOwqLLX+txsOw0h2cHvcUJlJPvMlotw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js"
+      integrity="sha512-ueXKWOB9liraz677EVGxz6H8nLk3RJjNv8Bfc0WrO9K9NyxROX3D/6bvZ9RYvAcYFxsVU+I0Jt/AMK0Nk8ya5g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
 
-
-  <link rel="stylesheet" href="style.css">
-  <title>PuddingFest</title>
-</head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon whiteicon"></span>
-      </button>
-      <div class="collapse navbar-collapse w-100" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-evenly">
-          <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="#home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#isi">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#schedule">Schedule</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#contact">Contact Us</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <div id="home" class="container-fluid">
-    <div id="carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="./Asset/fest.jpg" class="img-fluid" alt="robot looking at camera">
-          <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 p-0 m-0">
-            <h1 class="judul">PuddingFest</h1>
-            <p class="judul2">A Place Where Imagination Meets Reality</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="./Asset/vr.jpg" class="img-fluid" alt="people testing virtual reality headset">
-          <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 p-0 m-0">
-            <h1 class="judul">PuddingFest</h1>
-            <p class="judul2">Immersive VR Experience</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="./Asset/robot.jpg" class="img-fluid" alt="multiple screen">
-          <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 p-0 m-0">
-            <h1 class="judul">PuddingFest</h1>
-            <p class="judul2">Advanced Robot Technology</p>
-          </div>
-        </div>
-      </div>
-    </div>  
-  </div>
-
-  <div id="isi">
-    <div class="container-fluid h-100 d-flex flex-column align-items-center justify-content-center">
-      <h3 class="text-white text-center">PT Musang Present</h3>
-      <h1 class="text-white text-center">PuddingFest 2022</h1>
-      <hr class="solid">
-      <p class="text-white">PuddingFest is an annual technology event presented by PT Musang. Showcasing the best innovation from various brands across the world. This is where your dream becomes reality. Are you a developer? A tech enthusiast? An investor? What are you waiting for? Showcase your dream now!</p>
-      <a href="#regist">
-        <button type="button" class="btn btn-outline-light registbtn">REGISTER</button>
-      </a>
-    </div>
-  </div>
-
-  <div id="isi2">
-    <div class="container-fluid h-100 d-flex flex-column align-items-center justify-content-start">
-      <h1 class="text-white text-center">FEATURED TOPIC</h1>
-      <hr class="solid hrlong">
-      <div class="row w-100 pt-md-5 pb-5 justify-content-between">
-        <div class="col-md order-md-1">
-          <img src="./Asset/Doctor.jpg" alt="Doctor typing in a laptop" class="img-fluid">
-        </div>
-        <div class="col-md order-md-0">
-          <h2 class="text-white">Digital Healthcare</h2>
-          <p class="text-white">Digital health, or digital healthcare, is a broad, multidisciplinary concept that includes concepts from an intersection between technology and healthcare. Digital health applies digital transformation to the healthcare field, incorporating software, hardware and services. Under its umbrella, digital health includes mobile health (mHealth) apps, electronic health records (EHRs), electronic medical records (EMRs), wearable devices, telehealth and telemedicine, as well as personalized medicine. <br><br> <a class="text-white text-decoration-none" href="https://www.techtarget.com/searchhealthit/definition/digital-health-digital-healthcare#:~:text=Digital%20health%2C%20or%20digital%20healthcare,incorporating%20software%2C%20hardware%20and%20services." target="_blank" rel="noopener noreferrer">Learn More &rarr;</a></p>
-        </div>
-      </div>
-      <div class="row w-100 pb-5 pt-md-5 justify-content-between">
-        <div class="col-md order-0">
-          <img src="./Asset/Autonomous.jpg" alt="Autonomous vehicle in street" class="img-fluid">
-        </div>
-        <div class="col-md order-1">
-          <h2 class="text-white">Autonomous Vehicle</h2>
-          <p class="text-white">A self-driving car, also known as an autonomous vehicle (AV), autonomous car, driver-less car, or robotic car (robo-car), is a car incorporating vehicular automation, that is, a ground vehicle that is capable of sensing its environment and moving safely with little or no human input.
-          Self-driving cars combine a variety of sensors to perceive their surroundings, such as thermographic cameras, radar, lidar, sonar, GPS, odometry and inertial measurement units.[1][4] Advanced control systems interpret sensory information to identify appropriate navigation paths, as well as obstacles and relevant signage.<br><br><a class="text-white text-decoration-none" href="https://en.wikipedia.org/wiki/Self-driving_car" target="_blank" rel="noopener noreferrer">Learn More &rarr;</a></p>
+    <link rel="stylesheet" href="style.css" />
+    <title>PuddingFest</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon whiteicon"></span>
+        </button>
+        <div class="collapse navbar-collapse w-100" id="navbarNav">
+          <ul class="navbar-nav w-100 justify-content-evenly">
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="#home"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#isi">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#schedule">Schedule</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#contact">Contact Us</a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="row w-100 pb-5 pt-md-5 justify-content-between">
-        <div class="col-md order-md-1">
-          <img src="./Asset/Movie.jpg" alt="Cinema camera in the light" class="img-fluid">
-        </div>
-        <div class="col-md order-md-0">
-          <h2 class="text-white">Advanced Movie Production</h2>
-          <p class="text-white">Technology’s greatest impact is perhaps felt in new cameras that allow cinematographers to shoot in a higher definition, letting viewers take in more of the amazing work in set design. Technology also drives entire segments of film now, enabling movies that were not possible before. <br><br><a class="text-white text-decoration-none" href="https://www.wired.com/insights/2015/01/how-tech-shaped-film-making/" target="_blank" rel="noopener noreferrer">Learn More &rarr;</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div id="schedule">
-    <div class="container-fluid h-100 d-flex flex-column justify-content-center align-items-center">
-      <h1 class="text-white text-center">SCHEDULE</h1>
-      <hr class="solid hrlong">
+    </nav>
 
-      <div class="row m-5">
-        <h2 class="text-black bg-white">MONDAY</h2>
-        <div class="col-md">
-          <h3 class="text-white p-3">Opening Ceremony</h3>
-          <p class="text-white p-3">
-            Mrs. Meiying and Event Coordinator of PT Musang<br>
-            10.00 - 13.00 WIB 
-          </p>
-        </div>
-        <div class="col-md p-0 d-flex justify-content-end">
-          <div id="carouselschedule" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselschedule" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselschedule" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselschedule" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <div id="home" class="container-fluid">
+      <div
+        id="carousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-interval="4000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="./Asset/fest.jpg"
+              class="img-fluid"
+              alt="robot looking at camera" />
+            <div
+              class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 p-0 m-0">
+              <h1 class="judul">PuddingFest</h1>
+              <p class="judul2">A Place Where Imagination Meets Reality</p>
             </div>
-            <div class="carousel-inner h-100">
-              <div class="carousel-item active h-100">
-                <img src="./Asset/opening.jpg" class="img-fluid" alt="Women talking in stage">
-              </div>
-              <div class="carousel-item h-100">
-                <img src="./Asset/opening2.jpg" class="img-fluid" alt="Women talking in stage">
-              </div>
-              <div class="carousel-item h-100">
-                <img src="./Asset/opening3.jpg" class="img-fluid" alt="Men talking in stage">
-                <div class="carousel-caption d-none d-md-block">
-              </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./Asset/vr.jpg"
+              class="img-fluid"
+              alt="people testing virtual reality headset" />
+            <div
+              class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 p-0 m-0">
+              <h1 class="judul">PuddingFest</h1>
+              <p class="judul2">Immersive VR Experience</p>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselschedule" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselschedule" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./Asset/robot.jpg"
+              class="img-fluid"
+              alt="multiple screen" />
+            <div
+              class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 p-0 m-0">
+              <h1 class="judul">PuddingFest</h1>
+              <p class="judul2">Advanced Robot Technology</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-      <div class="row m-5">
-        <h2 class="text-black bg-white">TUESDAY</h2>
-        <div class="col-md">
-          <h3 class="text-white p-3">Media Day</h3>
-          <p class="text-white p-3">
-            Press Conference<br>
-            10.00 - 13.00 WIB
-          </p>
+    <div id="isi">
+      <div
+        class="container-fluid h-100 d-flex flex-column align-items-center justify-content-center">
+        <h3 class="text-white text-center">PT Musang Present</h3>
+        <h1 class="text-white text-center">PuddingFest 2022</h1>
+        <hr class="solid" />
+        <p class="text-white">
+          PuddingFest is an annual technology event presented by PT Musang.
+          Showcasing the best innovation from various brands across the world.
+          This is where your dream becomes reality. Are you a developer? A tech
+          enthusiast? An investor? What are you waiting for? Showcase your dream
+          now!
+        </p>
+        <a href="#regist">
+          <button type="button" class="btn btn-outline-light registbtn">
+            REGISTER
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <div id="isi2">
+      <div
+        class="container-fluid h-100 d-flex flex-column align-items-center justify-content-start">
+        <h1 class="text-white text-center">FEATURED TOPIC</h1>
+        <hr class="solid hrlong" />
+        <div class="row w-100 pt-md-5 pb-5 justify-content-between">
+          <div class="col-md order-md-1">
+            <img
+              src="./Asset/Doctor.jpg"
+              alt="Doctor typing in a laptop"
+              class="img-fluid" />
+          </div>
+          <div class="col-md order-md-0">
+            <h2 class="text-white">Digital Healthcare</h2>
+            <p class="text-white">
+              Digital health, or digital healthcare, is a broad,
+              multidisciplinary concept that includes concepts from an
+              intersection between technology and healthcare. Digital health
+              applies digital transformation to the healthcare field,
+              incorporating software, hardware and services. Under its umbrella,
+              digital health includes mobile health (mHealth) apps, electronic
+              health records (EHRs), electronic medical records (EMRs), wearable
+              devices, telehealth and telemedicine, as well as personalized
+              medicine. <br /><br />
+              <a
+                class="text-white text-decoration-none"
+                href="https://www.techtarget.com/searchhealthit/definition/digital-health-digital-healthcare#:~:text=Digital%20health%2C%20or%20digital%20healthcare,incorporating%20software%2C%20hardware%20and%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+                >Learn More &rarr;</a
+              >
+            </p>
+          </div>
         </div>
-        <div class="col-md p-0">
-          <div id="carouselschedule2" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselschedule2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselschedule2" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselschedule2" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner h-100">
-              <div class="carousel-item active h-100">
-                <img src="./Asset/presscon1.jpg" class="img-fluid" alt="bunch of people in a room">
-              </div>
-              <div class="carousel-item h-100">
-                <img src="./Asset/presscon2.jpg" class="img-fluid" alt="people taking a note">
-              </div>
-              <div class="carousel-item h-100">
-                <img src="./Asset/presscon3.jpg" class="img-fluid" alt="man raising his hand">
-                <div class="carousel-caption d-none d-md-block">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselschedule2" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselschedule2" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+        <div class="row w-100 pb-5 pt-md-5 justify-content-between">
+          <div class="col-md order-0">
+            <img
+              src="./Asset/Autonomous.jpg"
+              alt="Autonomous vehicle in street"
+              class="img-fluid" />
+          </div>
+          <div class="col-md order-1">
+            <h2 class="text-white">Autonomous Vehicle</h2>
+            <p class="text-white">
+              A self-driving car, also known as an autonomous vehicle (AV),
+              autonomous car, driver-less car, or robotic car (robo-car), is a
+              car incorporating vehicular automation, that is, a ground vehicle
+              that is capable of sensing its environment and moving safely with
+              little or no human input. Self-driving cars combine a variety of
+              sensors to perceive their surroundings, such as thermographic
+              cameras, radar, lidar, sonar, GPS, odometry and inertial
+              measurement units.[1][4] Advanced control systems interpret
+              sensory information to identify appropriate navigation paths, as
+              well as obstacles and relevant signage.<br /><br /><a
+                class="text-white text-decoration-none"
+                href="https://en.wikipedia.org/wiki/Self-driving_car"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Learn More &rarr;</a
+              >
+            </p>
+          </div>
+        </div>
+        <div class="row w-100 pb-5 pt-md-5 justify-content-between">
+          <div class="col-md order-md-1">
+            <img
+              src="./Asset/Movie.jpg"
+              alt="Cinema camera in the light"
+              class="img-fluid" />
+          </div>
+          <div class="col-md order-md-0">
+            <h2 class="text-white">Advanced Movie Production</h2>
+            <p class="text-white">
+              Technology’s greatest impact is perhaps felt in new cameras that
+              allow cinematographers to shoot in a higher definition, letting
+              viewers take in more of the amazing work in set design. Technology
+              also drives entire segments of film now, enabling movies that were
+              not possible before. <br /><br /><a
+                class="text-white text-decoration-none"
+                href="https://www.wired.com/insights/2015/01/how-tech-shaped-film-making/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Learn More &rarr;</a
+              >
+            </p>
           </div>
         </div>
       </div>
     </div>
 
-      <div class="row m-5">
-        <h2 class="text-black bg-white">WEDNESDAY</h2>
-        <div class="col-md">
-          <h3 class="text-white p-3">Keynote</h3>
-          <p class="text-white p-3">
-            Brand Presentation<br>
-            10.00 - 15.00 WIB
-          </p>
+    <div id="schedule">
+      <div
+        class="container-fluid h-100 d-flex flex-column justify-content-center align-items-center">
+        <h1 class="text-white text-center">SCHEDULE</h1>
+        <hr class="solid hrlong" />
+
+        <div class="row m-5">
+          <h2 class="text-black bg-white">MONDAY</h2>
+          <div class="col-md">
+            <h3 class="text-white p-3">Opening Ceremony</h3>
+            <p class="text-white p-3">
+              Mrs. Meiying and Event Coordinator of PT Musang<br />
+              10.00 - 13.00 WIB
+            </p>
+          </div>
+          <div class="col-md p-0 d-flex justify-content-end">
+            <div
+              id="carouselschedule"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="10000">
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselschedule"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselschedule"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselschedule"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                  <img
+                    src="./Asset/opening.jpg"
+                    class="img-fluid"
+                    alt="Women talking in stage" />
+                </div>
+                <div class="carousel-item h-100">
+                  <img
+                    src="./Asset/opening2.jpg"
+                    class="img-fluid"
+                    alt="Women talking in stage" />
+                </div>
+                <div class="carousel-item h-100">
+                  <img
+                    src="./Asset/opening3.jpg"
+                    class="img-fluid"
+                    alt="Men talking in stage" />
+                  <div class="carousel-caption d-none d-md-block"></div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselschedule"
+                  data-bs-slide="prev">
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselschedule"
+                  data-bs-slide="next">
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-md p-0">
-          <div id="carouselschedule3" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselschedule3" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselschedule3" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselschedule3" data-bs-slide-to="2" aria-label="Slide 3"></button>
+
+        <div class="row m-5">
+          <h2 class="text-black bg-white">TUESDAY</h2>
+          <div class="col-md">
+            <h3 class="text-white p-3">Media Day</h3>
+            <p class="text-white p-3">
+              Press Conference<br />
+              10.00 - 13.00 WIB
+            </p>
+          </div>
+          <div class="col-md p-0">
+            <div
+              id="carouselschedule2"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="10000">
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselschedule2"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselschedule2"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselschedule2"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                  <img
+                    src="./Asset/presscon1.jpg"
+                    class="img-fluid"
+                    alt="bunch of people in a room" />
+                </div>
+                <div class="carousel-item h-100">
+                  <img
+                    src="./Asset/presscon2.jpg"
+                    class="img-fluid"
+                    alt="people taking a note" />
+                </div>
+                <div class="carousel-item h-100">
+                  <img
+                    src="./Asset/presscon3.jpg"
+                    class="img-fluid"
+                    alt="man raising his hand" />
+                  <div class="carousel-caption d-none d-md-block"></div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselschedule2"
+                  data-bs-slide="prev">
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselschedule2"
+                  data-bs-slide="next">
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
             </div>
-            <div class="carousel-inner h-100">
-              <div class="carousel-item active h-100">
-                <img src="./Asset/keynote1.jpg" class="img-fluid" alt="man talking in front of big crowd in a stage">
+          </div>
+        </div>
+
+        <div class="row m-5">
+          <h2 class="text-black bg-white">WEDNESDAY</h2>
+          <div class="col-md">
+            <h3 class="text-white p-3">Keynote</h3>
+            <p class="text-white p-3">
+              Brand Presentation<br />
+              10.00 - 15.00 WIB
+            </p>
+          </div>
+          <div class="col-md p-0">
+            <div
+              id="carouselschedule3"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="10000">
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselschedule3"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselschedule3"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselschedule3"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"></button>
               </div>
-              <div class="carousel-item h-100">
-                <img src="./Asset/keynote2.jpg" class="img-fluid" alt="man talking in a big room with crowd">
-              </div>
-              <div class="carousel-item h-100">
-                <img src="./Asset/keynote3.jpg" class="img-fluid" alt="women presenting in a big screen">
-                <div class="carousel-caption d-none d-md-block">
+              <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                  <img
+                    src="./Asset/keynote1.jpg"
+                    class="img-fluid"
+                    alt="man talking in front of big crowd in a stage" />
+                </div>
+                <div class="carousel-item h-100">
+                  <img
+                    src="./Asset/keynote2.jpg"
+                    class="img-fluid"
+                    alt="man talking in a big room with crowd" />
+                </div>
+                <div class="carousel-item h-100">
+                  <img
+                    src="./Asset/keynote3.jpg"
+                    class="img-fluid"
+                    alt="women presenting in a big screen" />
+                  <div class="carousel-caption d-none d-md-block"></div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselschedule3"
+                  data-bs-slide="prev">
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselschedule3"
+                  data-bs-slide="next">
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselschedule3" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselschedule3" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+          </div>
+        </div>
+        <div class="row m-5">
+          <h2 class="text-black bg-white">THURSDAY</h2>
+          <div class="col-md">
+            <h3 class="text-white p-3">Exhibition</h3>
+            <p class="text-white p-3">
+              Product Showcase<br />
+              10.00 - 15.00 WIB
+            </p>
+          </div>
+
+          <div class="col-md p-0">
+            <div
+              id="carouselschedule4"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="10000">
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselschedule4"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselschedule4"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselschedule4"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                  <img
+                    src="./Asset/show1.jpg"
+                    class="img-fluid"
+                    alt="Tech Exhibition" />
+                </div>
+                <div class="carousel-item h-100">
+                  <img
+                    src="./Asset/show2.jpg"
+                    class="img-fluid"
+                    alt="Tech Exhibition" />
+                </div>
+                <div class="carousel-item h-100">
+                  <img
+                    src="./Asset/show4.jpg"
+                    class="img-fluid"
+                    alt="Tech Exhibition" />
+                  <div class="carousel-caption d-none d-md-block"></div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselschedule4"
+                  data-bs-slide="prev">
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselschedule4"
+                  data-bs-slide="next">
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row m-5">
+          <h2 class="text-black bg-white">FRIDAY</h2>
+          <div class="col-md">
+            <h3 class="text-white p-3">Closing</h3>
+            <p class="text-white p-3">
+              Aftershow<br />
+              19.00 - 22.00 WIB
+            </p>
+          </div>
+          <div class="col-md p-0">
+            <div
+              id="carouselschedule5"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="10000">
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselschedule5"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselschedule5"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselschedule5"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                  <img
+                    src="./Asset/after1.jpg"
+                    class="img-fluid"
+                    alt="silhouette of people in a concert" />
+                </div>
+                <div class="carousel-item h-100">
+                  <img
+                    src="./Asset/after2.jpg"
+                    class="img-fluid"
+                    alt="concert with big firework" />
+                </div>
+                <div class="carousel-item h-100">
+                  <img
+                    src="./Asset/after3.jpg"
+                    class="img-fluid"
+                    alt="VJ in front of concert stage" />
+                  <div class="carousel-caption d-none d-md-block"></div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselschedule5"
+                  data-bs-slide="prev">
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselschedule5"
+                  data-bs-slide="next">
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-      <div class="row m-5">
-        <h2 class="text-black bg-white">THURSDAY</h2>
-        <div class="col-md">
-          <h3 class="text-white p-3">Exhibition</h3>
-          <p class="text-white p-3">
-            Product Showcase<br>
-            10.00 - 15.00 WIB
-          </p>
-        </div>
 
-        <div class="col-md p-0">
-          <div id="carouselschedule4" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselschedule4" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselschedule4" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselschedule4" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner h-100">
-              <div class="carousel-item active h-100">
-                <img src="./Asset/show1.jpg" class="img-fluid" alt="Tech Exhibition">
+    <div id="regist" class="pb-5">
+      <div
+        class="container-fluid pt-5 h-100 d-flex flex-column justify-content-between align-items-center">
+        <h1 class="text-white pt-5">READY TO JOIN?</h1>
+        <hr class="solid" />
+        <div class="card w-75 glass">
+          <div class="card-body p-5">
+            <h4 class="card-title text-white">PuddingFest Registration</h4>
+            <p class="card-text text-white mb-5">
+              Register now to Join PuddingFest Event
+            </p>
+            <form id="regform">
+              <div class="mb-3">
+                <label for="inputmail" class="form-label text-white"
+                  >Email address</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="inputmail"
+                  placeholder="example@mail.com"
+                  aria-describedby="help"
+                  name="mail" />
+                <!-- <div id="help" class="form-text text-white">We'll never share your email with anyone else.</div> -->
               </div>
-              <div class="carousel-item h-100">
-                <img src="./Asset/show2.jpg" class="img-fluid" alt="Tech Exhibition">
+              <div class="mb-3">
+                <label for="inputname" class="form-label text-white"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputname"
+                  placeholder="John Doe"
+                  name="names" />
+                <!-- <div id="help" class="form-text text-white">Minimum of 3 characters</div> -->
               </div>
-              <div class="carousel-item h-100">
-                <img src="./Asset/show4.jpg" class="img-fluid" alt="Tech Exhibition">
-                <div class="carousel-caption d-none d-md-block">
+              <div class="mb-3">
+                <label for="inputphonum" class="form-label text-white"
+                  >Phone Number</label
+                >
+                <input
+                  type="number"
+                  id="inputphonum"
+                  class="form-control"
+                  aria-describedby="help"
+                  placeholder="08xxxxxxxxx"
+                  name="phonum" />
+                <!-- <div id="help" class="form-text text-white">Your phone number must start with 08 and not more than 14 digit</div> -->
               </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselschedule4" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselschedule4" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+              <div class="mb-3">
+                <label for="dropdown" class="form-label text-white"
+                  >Event</label
+                >
+                <select
+                  class="form-select text-black"
+                  aria-label="Default select example"
+                  id="dropdown"
+                  name="list">
+                  <option selected class="text-black-50" value="">
+                    Select event you want to join
+                  </option>
+                  <option value="1" class="text-black">
+                    Brand Presentation
+                  </option>
+                  <option value="2" class="text-black">Showcase Event</option>
+                  <option value="3" class="text-black">Event Sponsor</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-primary mt-5" id="submitbtn">
+                Submit
+              </button>
+            </form>
           </div>
         </div>
       </div>
     </div>
 
-      <div class="row m-5">
-        <h2 class="text-black bg-white">FRIDAY</h2>
-        <div class="col-md">
-          <h3 class="text-white p-3">Closing</h3>
-          <p class="text-white p-3">
-            Aftershow<br>
-            19.00 - 22.00 WIB
-          </p>
-        </div>
-        <div class="col-md p-0">
-          <div id="carouselschedule5" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselschedule5" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselschedule5" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselschedule5" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner h-100">
-              <div class="carousel-item active h-100">
-                <img src="./Asset/after1.jpg" class="img-fluid" alt="silhouette of people in a concert">
-              </div>
-              <div class="carousel-item h-100">
-                <img src="./Asset/after2.jpg" class="img-fluid" alt="concert with big firework">
-              </div>
-              <div class="carousel-item h-100">
-                <img src="./Asset/after3.jpg" class="img-fluid" alt="VJ in front of concert stage">
-                <div class="carousel-caption d-none d-md-block">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselschedule5" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselschedule5" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+    <footer id="contact" class="pt-1">
+      <div
+        class="container-fluid pt-sm-1 h-100 d-flex flex-column justify-content-between align-items-center">
+        <h1 class="text-white pt-5">PUDDINGFEST 2022</h1>
+        <hr class="hrfoot" />
+        <div
+          class="row w-100 d-flex justify-content-between align-items-center">
+          <div class="col-sm text-center text-sm-start">
+            <h2 class="text-white">&copy; PT Musang</h2>
+          </div>
+          <div
+            class="col-sm w-100 d-flex flex-column align-items-center align-items-sm-end gap-1">
+            <a
+              href="https://www.instagram.com/puddingfest/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-decoration-none text-white">
+              <img src="./Asset/ig.png" alt="" />
+              @puddingfest
+            </a>
+            <a
+              href="mailto: pudding.info@musang.co.id"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-decoration-none text-white">
+              <img src="./Asset/mail.png" alt="" />
+              pudding.info@musang.co.id
+            </a>
+            <a
+              href="tel: +6281234567890"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-decoration-none text-white">
+              <img src="./Asset/call.png" alt="" />
+              +6281234567890
+            </a>
           </div>
         </div>
       </div>
-    </div>
-    </div>
-  </div>
-
-  <div id="regist" class="pb-5">
-    <div class="container-fluid pt-5 h-100 d-flex flex-column justify-content-between align-items-center">
-      <h1 class="text-white pt-5">READY TO JOIN?</h1>
-      <hr class="solid">
-      <div class="card w-75 glass">
-        <div class="card-body p-5">
-          <h4 class="card-title text-white">PuddingFest Registration</h4>
-          <p class="card-text text-white mb-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <form id="regform">
-            <div class="mb-3">
-              <label for="inputmail" class="form-label text-white">Email address</label>
-              <input type="email" class="form-control" id="inputmail" placeholder="example@mail.com" aria-describedby="help" name="mail">
-              <!-- <div id="help" class="form-text text-white">We'll never share your email with anyone else.</div> -->
-            </div>
-            <div class="mb-3">
-              <label for="inputname" class="form-label text-white">Name</label>
-              <input type="text" class="form-control" id="inputname" placeholder="John Doe" name="names">
-              <!-- <div id="help" class="form-text text-white">Minimum of 3 characters</div> -->
-            </div>
-            <div class="mb-3">
-              <label for="inputphonum" class="form-label text-white">Phone Number</label>
-              <input type="number" id="inputphonum" class="form-control" aria-describedby="help" placeholder="08xxxxxxxxx" name="phonum">
-              <!-- <div id="help" class="form-text text-white">Your phone number must start with 08 and not more than 14 digit</div> -->
-            </div>
-            <div class="mb-3">
-              <label for="dropdown" class="form-label text-white">Event</label>
-              <select class="form-select text-black" aria-label="Default select example" id="dropdown" name="list" >
-                <option selected class="text-black-50" value="">Select event you want to join</option>
-                <option value="1" class="text-black">Brand Presentation</option>
-                <option value="2" class="text-black">Showcase Event</option>
-                <option value="3" class="text-black">Event Sponsor</option>
-              </select>
-            </div>
-            
-            <button type="submit" class="btn btn-primary mt-5" id="submitbtn">Submit</button>
-          </form>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <footer id="contact" class="pt-1">
-    <div class="container-fluid  pt-sm-1 h-100 d-flex flex-column justify-content-between align-items-center">
-      <h1 class="text-white pt-5">PUDDINGFEST 2022
-      </h1>
-      <hr class="hrfoot">
-      <div class="row w-100 d-flex justify-content-between align-items-center">
-        <div class="col-sm text-center text-sm-start">
-          <h2 class="text-white">&copy; PT Musang</h2>
-        </div>
-        <div class="col-sm w-100 d-flex flex-column align-items-center align-items-sm-end gap-1">
-          <a href="https://www.instagram.com/puddingfest/" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-white">
-            <img src="./Asset/ig.png" alt="">
-            @puddingfest
-          </a>
-            <a href="mailto: pudding.info@musang.co.id" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-white">
-            <img src="./Asset/mail.png" alt="">
-            pudding.info@musang.co.id
-          </a>
-          <a href="tel: +6281234567890" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-white">
-            <img src="./Asset/call.png" alt="">
-            +6281234567890
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
-</body>
-<script type="module" src="./index.js"></script>
+    </footer>
+  </body>
+  <script type="module" src="./index.js"></script>
 </html>
