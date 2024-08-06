@@ -108,7 +108,7 @@ hr.hrfoot{
 }
 #isi{
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url(./Asset/stage.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url(./Asset/stage.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -200,7 +200,7 @@ hr.hrfoot{
 
 #regist{
     height: auto;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url(./Asset/playing\ laptop.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url(./Asset/playing\ laptop.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
