@@ -21,7 +21,7 @@ nav {
   position: fixed;
 }
 
-nav ul li a {
+nav ul li a.nav-link {
   color: white;
   font-size: clamp(1.2rem, 2vw, 2rem);
 }
